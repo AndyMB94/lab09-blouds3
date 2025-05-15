@@ -1,0 +1,16 @@
+<%- include('layout', { body: `
+  <section>
+    <h2>Editar producto</h2>
+    <form action="/editar/${producto.id}" method="POST" enctype="multipart/form-data">
+      <input type="text" name="nombre" value="${producto.nombre}" required />
+      <input type="text" name="descripcion" value="${producto.descripcion}" />
+      <input type="number" name="precio" value="${producto.precio}" required />
+      <img src="https://${bucket}.s3.${region}.amazonaws.com/${producto.imagen_key}" width="100" />
+      <input type="hidden" name="imagen_actual" value="${producto.imagen_key}" />
+      <p><strong>Cambiar imagen:</strong></p>
+      <input type="file" name="imagen" />
+      <button type="submit">Actualizar</button>
+    </form>
+    <p><a href="/">Volver al listado</a></p>
+  </section>
+` }) %>

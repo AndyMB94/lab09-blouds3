@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+.env
+npm-debug.log
+.DS_Store
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# Sistema
+.vscode/
+*.zip
+*.tar
